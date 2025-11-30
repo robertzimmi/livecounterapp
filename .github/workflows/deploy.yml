@@ -39,6 +39,12 @@ jobs:
       - name: Build React app
         run: npm run build
 
-      # 6️⃣ Deploy usando gh-pages
+      # 6️⃣ Configurar identidade do Git para gh-pages
+      - name: Set Git identity
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      # 7️⃣ Deploy usando gh-pages
       - name: Deploy to GitHub Pages
         run: npm run deploy
