@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Life Counter Live</title>
+
+<style>
+body {
+    margin: 0;
+    background: #00ff00; /* ✅ Chroma key verde */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, Arial Black, Impact, sans-serif;
+}
+
+.life {
+    width: 45%;
+    text-align: center;
+    font-size: 12vw;
+    font-weight: bold;
+    color: white;
+    text-shadow: 4px 4px 10px #000;
+}
+
+.blue, .red { color: white; }
+
+</style>
+</head>
+<body>
+
+<div class="life blue" id="blue">40</div>
+<div class="life red" id="red">40</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+    apiKey: "AIzaSyDfL-y6uMTJNioCT_g-ccnQiCcDzd2WAug",
+    authDomain: "lifenation.firebasestorage.app",
+    databaseURL: "https://lifenation-default-rtdb.firebaseio.com",
+    projectId: "707583129390",
+    storageBucket: "lifenation.appspot.com",
+    messagingSenderId: "SEU_ID",
+    appId: "1:707583129390:android:a9e3a671317514f92cacbf"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+// 🔵 Blue Player
+firebase.database().ref("players/blue").on("value", snap => {
+    document.getElementById("blue").textContent = snap.val();
+});
+
+// 🔴 Red Player
+firebase.database().ref("players/red").on("value", snap => {
+    document.getElementById("red").textContent = snap.val();
+});
+</script>
+</body>
+</html>
