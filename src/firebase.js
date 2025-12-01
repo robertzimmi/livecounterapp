@@ -12,6 +12,17 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
+// ✅ LOG DE DEBUG (IMPORTANTE)
+console.log("🔥 Firebase Debug Config:");
+console.log("API KEY =>", firebaseConfig.apiKey);
+console.log("AUTH DOMAIN =>", firebaseConfig.authDomain);
+console.log("DB URL =>", firebaseConfig.databaseURL);
+console.log("PROJECT ID =>", firebaseConfig.projectId);
+console.log("STORAGE =>", firebaseConfig.storageBucket);
+console.log("SENDER ID =>", firebaseConfig.messagingSenderId);
+console.log("APP ID =>", firebaseConfig.appId);
+
+// Inicialização
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
