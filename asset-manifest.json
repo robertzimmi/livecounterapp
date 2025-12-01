@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/livecounterapp/static/css/main.87a30445.css",
-    "main.js": "/livecounterapp/static/js/main.f256c205.js",
+    "main.js": "/livecounterapp/static/js/main.372770b6.js",
     "index.html": "/livecounterapp/index.html",
     "main.87a30445.css.map": "/livecounterapp/static/css/main.87a30445.css.map",
-    "main.f256c205.js.map": "/livecounterapp/static/js/main.f256c205.js.map"
+    "main.372770b6.js.map": "/livecounterapp/static/js/main.372770b6.js.map"
   },
   "entrypoints": [
     "static/css/main.87a30445.css",
-    "static/js/main.f256c205.js"
+    "static/js/main.372770b6.js"
   ]
 }
