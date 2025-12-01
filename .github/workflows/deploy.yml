@@ -11,6 +11,7 @@ permissions:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    environment: github-pages   # ✅ AQUI É O SEGREDO
 
     steps:
       - name: Checkout
@@ -24,8 +25,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # ✅ AQUI PASSAMOS AS VARIÁVEIS PARA O BUILD
-      - name: Build React app
+      - name: Build React
         run: npm run build
         env:
           REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
